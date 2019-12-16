@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>CSS Grid Example</title>
+        <title>Ecommerce</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:300,400,700" rel="stylesheet">
@@ -19,7 +19,7 @@
     <body>
         <header>
             <div class="top-nav container">
-                <div class="logo">CSS Grid Example</div>
+                <div class="logo">PT. Spark Integrated Solution</div>
                 <ul>
                     <li><a href="#">Shop</a></li>
                     <li><a href="#">About</a></li>
@@ -30,8 +30,8 @@
 
             <div class="hero container">
                 <div class="hero-copy">
-                    <h1>CSS Grid Example</h1>
-                    <p>A practical example of using CSS Grid for a typical website layout.</p>
+                    <h1>Ecommerce</h1>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto, ullam!</p>
                     <div class="hero-buttons">
                         <a href="#" class="button button-white">Button 1</a>
                         <a href="#" class="button button-white">Button 2</a>
@@ -46,7 +46,7 @@
 
         <div class="featured-section">
             <div class="container">
-                <h1 class="text-center">CSS Grid Example</h1>
+                <h1 class="text-center">Ecommerce Shop</h1>
 
                 <p class="section-description text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquid earum fugiat debitis nam, illum vero, maiores odio exercitationem quaerat. Impedit iure fugit veritatis cumque quo provident doloremque est itaque.</p>
 
@@ -135,7 +135,7 @@
 
         <footer>
             <div class="footer-content container">
-                <div class="made-with">Made with <i class="fa fa-heart"></i> by Andre Madarang</div>
+                
                 <ul>
                     <li>Follow Me:</li>
                     <li><a href="#"><i class="fa fa-globe"></i></a></li>
