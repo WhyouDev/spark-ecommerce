@@ -33,8 +33,8 @@
                     <h1>Ecommerce</h1>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto, ullam!</p>
                     <div class="hero-buttons">
-                        <a href="#" class="button button-white">Button 1</a>
-                        <a href="#" class="button button-white">Button 2</a>
+                        <a href="#" class="button button-black">Button 1</a>
+                        <a href="#" class="button button-black">Button 2</a>
                     </div>
                 </div> <!-- end hero-copy -->
 

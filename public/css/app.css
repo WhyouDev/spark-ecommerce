@@ -166,9 +166,10 @@ a:visited {
 }
 
 h1,
-h2 {
+h2, p {
   font-family: 'Montserrat', Arial, sans-serif;
   font-weight: bold;
+  color: #212121;
 }
 
 h1 {
@@ -224,7 +225,7 @@ img {
 }
 
 header {
-  background: url("/img/triangles.svg");
+  background: url("/img/polygonal.jpg");
   background-size: cover;
   color: white;
 }
@@ -242,6 +243,7 @@ header .top-nav {
 header .top-nav .logo {
   font-weight: bold;
   font-size: 28px;
+  color: #212121;
 }
 
 header .top-nav ul {
@@ -325,7 +327,7 @@ header .top-nav ul a:hover {
 }
 
 footer {
-  background: #535353;
+  background: #2fbdc2;
   color: #e9e9e9;
   padding: 40px 0;
 }
