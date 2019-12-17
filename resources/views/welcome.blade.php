@@ -21,10 +21,10 @@
             <div class="top-nav container">
                 <div class="logo">PT. Spark Integrated Solution</div>
                 <ul>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Cart</a></li>
+                    <li><a class="list" href="#">Shop</a></li>
+                    <li><a class="list" href="#">About</a></li>
+                    <li><a class="list" href="#">Blog</a></li>
+                    <li><a class="list" href="#">Cart</a></li>
                 </ul>
             </div> <!-- end top-nav -->
 
