@@ -30,3 +30,6 @@ Route::get('/admin/product/delete/{id}','ProductController@delete');
 // categories route
 
 // transaction route
+
+//shop route
+Route::get('/shop','ShopController@viewShop');
