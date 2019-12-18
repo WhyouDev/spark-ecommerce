@@ -45,13 +45,19 @@
                 </a>
               </li> -->
               <li class="nav-item">
+                <a href="/admin" class="nav-link {{ (request()->is('admin')) ? 'active' : '' }}">
+                  <i class="fas fa-home nav-icon"></i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="fas fa-cash-register nav-icon"></i>
                   <p>Data Transaksi</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/admin/product" class="nav-link  {{ (request()->is('admin/product')) ? 'active' : '' }}">
                   <i class="fas fa-book nav-icon"></i>
                   <p>Master Barang</p>
                 </a>

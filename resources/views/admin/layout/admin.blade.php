@@ -15,6 +15,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{ asset('backend/lte/plugins/fontawesome-free/css/all.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('backend/lte/dist/css/adminlte.min.css') }}">
+  <!-- jQuery -->
+  <script src="{{ asset('backend/lte/plugins/jquery/jquery.min.js') }}"></script>
+  <!-- Data Table -->
+  <link rel="stylesheet" href="{{ asset('backend/css/datatables.min.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -22,11 +26,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <div class="wrapper">
 
   <!-- Navbar -->
-@include('admin/header')
+@include('admin/layout/header')
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-@include('admin/sidebar')
+@include('admin/layout/sidebar')
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -52,17 +56,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-@include('admin/footer')
+@include('admin/layout/footer')
 </div>
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
 
-<!-- jQuery -->
-<script src="{{ asset('backend/lte/plugins/jquery/jquery.min.js') }}"></script>
+
 <!-- Bootstrap 4 -->
 <script src="{{ asset('backend/lte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('backend/lte/dist/js/adminlte.min.js') }}"></script>
+<!-- DataTable -->
+<script src="{{ asset('backend/js/datatables.min.js') }}"></script>
+<!-- App scripts -->
+@stack('scripts')
 </body>
 </html>

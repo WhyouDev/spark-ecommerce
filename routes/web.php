@@ -11,11 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'welcome');
 
 Auth::routes();
 
 Route::get('/admin', 'HomeController@index')->name('home');
-Route::get('/admin/goods', 'GoodsController@index');
+Route::get('/admin/product/json','ProductController@productjson');
+Route::get('/admin/product', 'ProductController@index');
