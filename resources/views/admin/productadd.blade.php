@@ -11,7 +11,7 @@
 @section('content')
 <h2 class="my-1">Add Products Form</h2>
 	<div class="col-lg-8">	
-		<form action="/upload/proses" method="POST" enctype="multipart/form-data">
+		<form action="/admin/product/store" method="POST" enctype="multipart/form-data">
 			{{ csrf_field() }}
             <div class="form-group">
 			<b>Name</b>

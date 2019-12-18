@@ -38,7 +38,7 @@ class ProductController extends Controller
         return view('admin.productadd',['categorieslist' => $categorieslist]);
     }
 
-    public function store()
+    public function store(Request $request)
     {
         $this->validate($request, [
             'pname' => 'required',
@@ -48,12 +48,12 @@ class ProductController extends Controller
         ]);
     
         // menyimpan data file yang diupload ke variabel $file
-        $file = $request->file('file');
+        $file = $request->file('pfile');
         // menyimpan nama file kedalam variable namafoto
         $namaphoto = $file->getClientOriginalName();
     
         // file dir
-        $tujuan_upload = 'public/img_products/';
+        $tujuan_upload = 'img_products/';
         $file->move($tujuan_upload,$file->getClientOriginalName());
 
         // insert data ke table products
@@ -67,12 +67,4 @@ class ProductController extends Controller
 	// alihkan halaman ke halaman products
 	return redirect('/admin/product');
     }
-
-    // method untuk edit data produk
-    //public function edit($id)
-    //{
-    //   $productlist = ProductModel::where('products_id',$id)->get(); 
-        // passing data pegawai yang didapat ke view edit.blade.php
-    //    return view('admin.editproduct',['productlist' => $productlist]);
-    //}
 }

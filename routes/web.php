@@ -24,7 +24,7 @@ Route::get('/admin', 'HomeController@index')->name('home');
 Route::get('/admin/product/json','ProductController@productjson');
 Route::get('/admin/product', 'ProductController@index');
 Route::get('/admin/product/add', 'ProductController@add');
-Route::post('/admin/product/store', 'ProductController@store')
+Route::post('/admin/product/store', 'ProductController@store');
 Route::get('/admin/product/edit/{id}','ProductController@edit');
 Route::get('/admin/product/delete/{id}','ProductController@delete');
 
