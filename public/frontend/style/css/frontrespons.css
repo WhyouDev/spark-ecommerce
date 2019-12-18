@@ -1,12 +1,12 @@
 /*==========  Non-Mobile First Method  ==========*/
 
 /* Large Devices, Wide Screens */
-
+  
 @media only screen and (max-width: 1200px) {
-  .container {
-    max-width: 960px;
+    .container {
+      max-width: 960px;
+    }
   }
-}
 
 /* Medium Devices, Desktops */
 
@@ -54,8 +54,8 @@
   footer .footer-content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
 
   footer .footer-content .made-with {
