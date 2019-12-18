@@ -32,8 +32,8 @@ $(function() {
         columns: [
 			{ data: 'DT_RowIndex', name:'DT_RowIndex'},
             { data: 'products_name', name: 'products_name' },
-            { data: 'products_price', name: 'products_price' },
-			{data: 'action', name: 'action', orderable: false, searchable: false}
+            { data: 'price', name: 'products_price' },
+			{ data: 'action', name: 'action', orderable: false, searchable: false }
         ]
     });
 });
