@@ -9,7 +9,7 @@
 <!-- isi bagian konten -->
 <!-- cara penulisan isi section yang panjang -->
 @section('content')
-
+<button class="btn btn-primary"><a href="admin/product/add"></a></button>
 <table class="table table-bordered" id="product-table">
         <thead>
             <tr>
