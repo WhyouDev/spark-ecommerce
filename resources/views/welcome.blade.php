@@ -5,15 +5,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Ecommerce</title>
+        <title>Spark Ecommerce</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:300,400,700" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/style/css/frontmain.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/style/css/frontrespons.css') }}">
 
     </head>
     <body>
@@ -21,7 +21,7 @@
             <div class="top-nav container">
                 <div class="logo">PT. Spark Integrated Solution</div>
                 <ul>
-                    <li><a class="list" href="#">Shop</a></li>
+                    <li><a class="list" href="/views/shop">Shop</a></li>
                     <li><a class="list" href="#">About</a></li>
                     <li><a class="list" href="#">Blog</a></li>
                     <li><a class="list" href="#">Cart</a></li>
