@@ -9,7 +9,8 @@
 <!-- isi bagian konten -->
 <!-- cara penulisan isi section yang panjang -->
 @section('content')
-
+<a href="product/add"><button class="btn btn-primary"><i class="fa fa-plus"></i>&nbspAdd Product</button></a>
+<hr>
 <table class="table table-bordered" id="product-table">
         <thead>
             <tr>
@@ -26,6 +27,7 @@
 <script>
 $(function() {
     $('#product-table').DataTable({
+		responsive: true,
         processing: true,
         serverSide: true,
         ajax: '/admin/product/json',
@@ -35,7 +37,7 @@ $(function() {
             { data: 'price', name: 'products_price' },
 			{ data: 'action', name: 'action', orderable: false, searchable: false }
         ]
-    });
+    }).responsive.recalc();;
 });
 </script>
 @endpush

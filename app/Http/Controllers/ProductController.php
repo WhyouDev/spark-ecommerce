@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\ProductModel;
+use App\Models\CategoriesModel;
 use DataTables;
 
 class ProductController extends Controller
@@ -31,11 +32,50 @@ class ProductController extends Controller
     	return view('admin.productlist',['productlist' => $productlist]);
     }
 
-    // method untuk edit data produk
-    public function edit($id)
+    public function add()
     {
-        $productlist = ProductModel::where('products_id',$id)->get(); 
-        // passing data pegawai yang didapat ke view edit.blade.php
-        return view('admin.editproduct',['productlist' => $productlist]);
+        $categorieslist = CategoriesModel::all();
+        return view('admin.productadd',['categorieslist' => $categorieslist]);
     }
+
+    public function store()
+    {
+        $this->validate($request, [
+            'file' => 'required',
+            'keterangan' => 'required',
+        ]);
+    
+        // menyimpan data file yang diupload ke variabel $file
+        $file = $request->file('file');
+    
+        // nama file
+        //$file->getClientOriginalName();
+        // echo '<br>';
+    
+        // ekstensi file
+        // echo 'File Extension: '.$file->getClientOriginalExtension();
+        // echo '<br>';
+    
+        // real path
+        // echo 'File Real Path: '.$file->getRealPath();
+        // echo '<br>';
+    
+        // ukuran file
+        // echo 'File Size: '.$file->getSize();
+        // echo '<br>';
+        // tipe mime
+        // echo 'File Mime Type: '.$file->getMimeType();
+    
+        // isi dengan nama folder tempat kemana file diupload
+        $tujuan_upload = 'data_file';
+        $file->move($tujuan_upload,$file->getClientOriginalName());
+    }
+
+    // method untuk edit data produk
+    //public function edit($id)
+    //{
+    //   $productlist = ProductModel::where('products_id',$id)->get(); 
+        // passing data pegawai yang didapat ke view edit.blade.php
+    //    return view('admin.editproduct',['productlist' => $productlist]);
+    //}
 }
