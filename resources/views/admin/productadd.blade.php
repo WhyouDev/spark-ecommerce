@@ -11,6 +11,15 @@
 @section('content')
 <div class="card">
 <div class="card-header border-0">
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <table width="100%">
 <tr>
 	<td width="50%"><h2 class="my-1">Add Products Form</h2></td>
@@ -44,11 +53,11 @@
 			</div>
 			<div class="form-group">
 			<b>Qty</b>
-			<input class="form-control" type="number" name="pqty" placeholder="Products Price">
+			<input class="form-control" type="number" name="pqty" placeholder="Products Quantity">
 			</div>
 			<div class="form-group">
 			<b>Unit Type (ex: pcs)</b>
-			<input class="form-control" type="text" name="putype" placeholder="Products Price">
+			<input class="form-control" type="text" name="putype" placeholder="Products Unit Type">
 			</div>
 			<input type="submit" value="Simpan" class="btn btn-success">
 	</form>

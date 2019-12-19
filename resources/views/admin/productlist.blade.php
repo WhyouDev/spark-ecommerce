@@ -11,6 +11,9 @@
 @section('content')
 <div class="card">
 <div class="card-header border-0">
+@if(session()->has('status'))
+  {{ session('status') }}
+@endif
 <a href="product/add"><button class="btn btn-primary"><i class="fa fa-plus"></i>&nbspAdd Product</button></a>
 <hr>
 <table class="table table-bordered" id="product-table">
@@ -51,22 +54,30 @@ $(function() {
 
     $(document).on('click','.deleteProduct',function() {
         var id=$(this).data('id')
-        
-        $.ajax({
-            type: "delete",
-            url: "/admin/product/delete/" + id,
-            headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            success: function(data){
-                producttable.ajax.reload();
+                
+        Swal.fire({
+              title: 'Are you sure?',
+              text: "You won't be able to revert this!",
+              type: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+              if (result.value) {
+                $.ajax({
+                type: "delete",
+                url: "/admin/product/delete/" + id,
+                headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(data){
+                    producttable.ajax.reload();
+                }
+                });
             }
-        });
-
-
-    })
-
-
+            })
+        })
 });
 </script>
 @endpush

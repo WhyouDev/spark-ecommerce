@@ -26,6 +26,7 @@ Route::get('/admin/product', 'ProductController@index');
 Route::get('/admin/product/add', 'ProductController@add');
 Route::post('/admin/product/store', 'ProductController@store');
 Route::get('/admin/product/edit/{id}','ProductController@edit');
+Route::post('/admin/product/storeedit/{id}', 'ProductController@storeedit');
 Route::delete('/admin/product/delete/{id}','ProductController@delete');
 
 // categories route
