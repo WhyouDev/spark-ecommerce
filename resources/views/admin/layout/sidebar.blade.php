@@ -56,19 +56,37 @@
                   <p>Data Transaksi</p>
                 </a>
               </li>
+
+            <li class="nav-item has-treeview {{ (request()->is('admin/product')) ? 'active' : '' }}">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Master Data
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/admin/product" class="nav-link  {{ (request()->is('admin/product')) ? 'active' : '' }}">
-                  <i class="fas fa-book nav-icon"></i>
+                <a href="/admin/product" class="nav-link {{ (request()->is('admin/product')) ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
                   <p>Master Barang</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-barcode nav-icon"></i>
+                <a href="pages/tables/data.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
                   <p>Master Kategori</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="pages/tables/jsgrid.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Master User</p>
+                </a>
+              </li>
             </ul>
+          </li>
+          </ul>
           </li>
           <!--<li class="nav-item">
             <a href="#" class="nav-link">

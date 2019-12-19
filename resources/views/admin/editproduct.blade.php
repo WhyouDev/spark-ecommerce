@@ -31,7 +31,9 @@
 			<b>Categories</b>
 			<select class="form-control" name="pcat">
             @foreach($categorieslist as $c)
-                <option value="{{ $c->categories_id }}">{{ $c->categories_name }}</option>
+                <option value="{{ $c->categories_id }}" 
+				@if($pe->categories_id == $c->categories_id) selected @endif
+				>{{ $c->categories_name }}</option>
             @endforeach
             </select>
 			</div>

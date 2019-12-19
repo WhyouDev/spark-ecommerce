@@ -30,5 +30,6 @@ Route::post('/admin/product/storeedit/{id}', 'ProductController@storeedit');
 Route::delete('/admin/product/delete/{id}','ProductController@delete');
 
 // categories route
+Route::get('/admin/category', 'ProductController@index');
 
 // transaction route
