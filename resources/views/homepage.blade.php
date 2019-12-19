@@ -15,7 +15,7 @@
     </div> <!-- end hero-copy -->
 
     <div class="hero-image">
-        <img src="img/macbook-pro-laravel.png" alt="hero image">
+        <img src="img/lenovo-yoga.png" alt="hero image">
     </div>
 </div> <!-- end hero -->
 
@@ -90,17 +90,17 @@
 
         <div class="blog-posts">
             <div class="blog-post" id="blog1">
-                <a href="#"><img src="img/blog1.png" alt="blog image"></a>
+                <a href="#"><img src="img/make money.jpg" alt="blog image"></a>
                 <a href="#"><h2 class="blog-title">Blog Post Title 1</h2></a>
                 <div class="blog-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est ullam, ipsa quasi?</div>
             </div>
             <div class="blog-post" id="blog2">
-                <a href="#"><img src="img/blog2.png" alt="blog image"></a>
+                <a href="#"><img src="img/forblog2.jpg" alt="blog image"></a>
                 <a href="#"><h2 class="blog-title">Blog Post Title 2</h2></a>
                 <div class="blog-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est ullam, ipsa quasi?</div>
             </div>
             <div class="blog-post" id="blog3">
-                <a href="#"><img src="img/blog3.png" alt="blog image"></a>
+                <a href="#"><img src="img/forblog3.jpg" alt="blog image"></a>
                 <a href="#"><h2 class="blog-title">Blog Post Title 3</h2></a>
                 <div class="blog-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est ullam, ipsa quasi?</div>
             </div>

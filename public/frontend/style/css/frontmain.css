@@ -162,7 +162,7 @@ a {
 }
 
 a:visited {
-  color: #212121;
+  color: #464a47;
 }
 
 h1, h2, p {
@@ -180,6 +180,7 @@ h2 {
   font-size: 22px;
   margin-bottom: 10px;
 }
+
 
 img {
   max-width: 100%;
@@ -237,7 +238,7 @@ header .top-nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 40px 0;
+  padding: 10px 0;
  
 }
 
@@ -277,6 +278,7 @@ header .top-nav ul a:hover {
 
 .hero .hero-image {
   padding-left: 60px;
+  width: 500px;
 }
 
 .hero h1 {
@@ -363,6 +365,7 @@ h1.stylish-heading:after {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 20px;
 }
 
 /* start search Box */
