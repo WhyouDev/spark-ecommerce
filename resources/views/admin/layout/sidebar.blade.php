@@ -69,19 +69,19 @@
               <li class="nav-item">
                 <a href="/admin/product" class="nav-link {{ (request()->is('admin/product')) ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Master Barang</p>
+                  <p>Master Products</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/data.html" class="nav-link">
+                <a href="/admin/category" class="nav-link {{ (request()->is('admin/category')) ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Master Kategori</p>
+                  <p>Master Categories</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/tables/jsgrid.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Master User</p>
+                  <p>Master Users</p>
                 </a>
               </li>
             </ul>

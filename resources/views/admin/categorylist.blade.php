@@ -14,16 +14,13 @@
 @if(session()->has('status'))
   {{ session('status') }}
 @endif
-<a href="product/add"><button class="btn btn-primary"><i class="fa fa-plus"></i>&nbspAdd Product</button></a>
+<a href="category/add"><button class="btn btn-primary"><i class="fa fa-plus"></i>&nbspAdd Categories</button></a>
 <hr>
-<table class="table table-bordered" id="product-table">
+<table class="table table-bordered" id="category-table">
         <thead>
             <tr>
 				<th>No</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Stock</th>
-                <th>Unit</th>
+                <th>Categories Name</th>
 				<th>Action</th>
             </tr>
         </thead>
@@ -36,23 +33,20 @@
 <script>
 
 $(function() {
-    var producttable = $('#product-table').DataTable({
+    var categorytable = $('#category-table').DataTable({
 		responsive: true,
         processing: true,
         serverSide: true,
-        ajax: '/admin/product/json',
+        ajax: '/admin/category/json',
         columns: [
 			{ data: 'DT_RowIndex', name:'DT_RowIndex'},
-            { data: 'products_name', name: 'products_name' },
-            { data: 'price', name: 'products_price' },
-            { data: 'products_stock', name:'products_stock'},
-            { data: 'products_unittype', name:'products_unittype'},
+            { data: 'categories_name', name: 'categories_name' },
 			{ data: 'action', name: 'action', orderable: false, searchable: false }
         ]
     })
 
 
-    $(document).on('click','.deleteProduct',function() {
+    $(document).on('click','.deleteCategory',function() {
         var id=$(this).data('id')
                 
         Swal.fire({
@@ -67,12 +61,12 @@ $(function() {
               if (result.value) {
                 $.ajax({
                 type: "delete",
-                url: "/admin/product/delete/" + id,
+                url: "/admin/category/delete/" + id,
                 headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 success: function(data){
-                    producttable.ajax.reload();
+                    categorytable.ajax.reload();
                 }
                 });
             }

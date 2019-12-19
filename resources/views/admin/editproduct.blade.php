@@ -55,7 +55,7 @@
 			<b>Unit Type (ex: pcs)</b>
 			<input class="form-control" type="text" name="putype" placeholder="Products Price" value="{{ $pe->products_unittype }}">
 			</div>
-			<input type="submit" value="Update" class="btn btn-success">
+			<input type="submit" value="Save" class="btn btn-success">
 	</form>
     @endforeach
 </div>

@@ -30,7 +30,13 @@ Route::post('/admin/product/storeedit/{id}', 'ProductController@storeedit');
 Route::delete('/admin/product/delete/{id}','ProductController@delete');
 
 // categories route
-Route::get('/admin/category', 'ProductController@index');
+Route::get('/admin/category/json','CategoryController@categoryjson');
+Route::get('/admin/category', 'CategoryController@index');
+Route::get('/admin/category/add', 'CategoryController@add');
+Route::post('/admin/category/store', 'CategoryController@store');
+Route::get('/admin/category/edit/{id}','CategoryController@edit');
+Route::post('/admin/category/storeedit/{id}', 'CategoryController@storeedit');
+Route::delete('/admin/category/delete/{id}','CategoryController@delete');
 
 // transaction route
 
