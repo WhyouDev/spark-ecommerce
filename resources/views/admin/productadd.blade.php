@@ -59,7 +59,7 @@
 			<b>Unit Type (ex: pcs)</b>
 			<input class="form-control" type="text" name="putype" placeholder="Products Unit Type">
 			</div>
-			<input type="submit" value="Simpan" class="btn btn-success">
+			<input type="submit" value="Add" class="btn btn-success">
 	</form>
 </div>
 </div>
