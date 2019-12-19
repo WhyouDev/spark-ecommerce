@@ -23,9 +23,11 @@ Route::get('/admin', 'HomeController@index')->name('home');
 // products route
 Route::get('/admin/product/json','ProductController@productjson');
 Route::get('/admin/product', 'ProductController@index');
-Route::get('/admin/product/tambah', 'ProductController@add');
+Route::get('/admin/product/add', 'ProductController@add');
+Route::post('/admin/product/store', 'ProductController@store');
 Route::get('/admin/product/edit/{id}','ProductController@edit');
-Route::get('/admin/product/delete/{id}','ProductController@delete');
+Route::post('/admin/product/storeedit/{id}', 'ProductController@storeedit');
+Route::delete('/admin/product/delete/{id}','ProductController@delete');
 
 // categories route
 
