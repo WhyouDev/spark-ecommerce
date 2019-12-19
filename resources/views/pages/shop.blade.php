@@ -1,4 +1,5 @@
 @extends('index')
+@section('judul_halaman','Shop')
 @section('content')
 <div class="breadcrumbs">
     <div class="breadcrumbs-container container">
@@ -60,7 +61,7 @@
         </div>
         <div class="products text-center">
             <div class="product">
-                <a href="#">
+                <a href="/pages/detailshop">
                     <img src="/img/desktop-1.jpg" alt="product">
                 </a>
                 <a href="#">
