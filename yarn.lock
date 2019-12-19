@@ -3484,9 +3484,9 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@^4.0.0, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.4, lodash@~4.17.4:
-  version "4.17.4"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
+lodash@^4.0.0, lodash@^4.14.0, lodash@^4.17.13, lodash@^4.17.2, lodash@^4.17.4, lodash@~4.17.4:
+  version "4.17.13"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.13.tgz#0bdc3a6adc873d2f4e0c4bac285df91b64fc7b93"
 
 logalot@^2.0.0:
   version "2.1.0"
@@ -4856,6 +4856,10 @@ require-main-filename@^1.0.1:
 requires-port@1.0.x, requires-port@1.x.x:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
+
+reset-css@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/reset-css/-/reset-css-2.2.1.tgz#fe3204c0c4831979fbb4967c90a992f0164635ed"
 
 resolve-url-loader@^2.0.2:
   version "2.1.0"
