@@ -12,7 +12,7 @@
 */
 
 // homepage route
-Route::view('/', 'welcome');
+Route::view('/', 'homepage');
 
 // login route
 Auth::routes();
@@ -32,4 +32,4 @@ Route::get('/admin/product/delete/{id}','ProductController@delete');
 // transaction route
 
 //shop route
-Route::get('/shop','ShopController@viewShop');
+Route::get('/pages/shop','ShopController@viewShop');
