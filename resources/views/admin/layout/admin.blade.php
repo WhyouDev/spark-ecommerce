@@ -21,6 +21,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{ asset('backend/css/datatables.min.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <meta name="csrf-token" content="{{ csrf_token() }}" />
+
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">

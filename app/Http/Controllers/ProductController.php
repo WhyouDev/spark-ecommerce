@@ -16,9 +16,13 @@ class ProductController extends Controller
         return Datatables::of($productlist)
          ->addColumn('action', function ($productlist) {
                 $btn = '
-                <a href="admin/products/edit/'.$productlist->products_id.'" data-toggle="tooltip" data-original-title="Edit" class="edit btn btn-primary btn-sm editProduct"><i class="fa fa-edit"></i>&nbspEdit</a>';
-                $btn = $btn.' <a href="admin/products/delete/'.$productlist->products_id.'" data-toggle="tooltip" data-original-title="Delete" class="btn btn-danger btn-sm deleteProduct"><i class="fa fa-trash"></i>&nbspDelete</a>';
-                      return $btn;
+                <a href="admin/product/edit/'.$productlist->products_id.'" data-toggle="tooltip" data-original-title="Edit" class="edit btn btn-primary btn-sm editProduct"><i class="fa fa-edit"></i>&nbspEdit</a>';
+
+
+                $btn .= ' <button data-id="'.$productlist->products_id.'" class="btn btn-danger btn-sm deleteProduct"><i class="fa fa-trash"></i>&nbspDelete</button>';
+                      
+                
+                return $btn;
             }
         )
         ->addIndexColumn()
@@ -40,11 +44,14 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
+        // validasi form
         $this->validate($request, [
             'pname' => 'required',
             'pcat' => 'required',
             'pprice' => 'required',
-            'pfile' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'pfile' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'pqty' => 'required',
+            'putype' => 'required'
         ]);
     
         // menyimpan data file yang diupload ke variabel $file
@@ -61,10 +68,28 @@ class ProductController extends Controller
             'categories_id' => $request->pcat,
             'products_name' => $request->pname,
             'price' => $request->pprice,
-            'products_photo' => $namaphoto
+            'products_photo' => $namaphoto,
+            'products_stock' => $request->pqty,
+            'products_unittype' => $request->putype
         ]);
 
-	// alihkan halaman ke halaman products
-	return redirect('/admin/product');
+        // jika berhasil direct ke halaman product
+        return redirect('/admin/product');
     }
+
+    public function delete($id)
+    {
+        $products = ProductModel::where('products_id',$id);
+        $products->delete();
+
+        $data = [
+            "status" => 200,
+            "message" => "Successfully Delete Award"
+        ];
+
+        return json_encode($data);
+
+        return redirect('/admin/product');
+    }
+
 }
