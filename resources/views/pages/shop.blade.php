@@ -9,7 +9,7 @@
             <span>Shop</span>
         </div>
         <div>
-            <form action="/search" method="GET" class="search-form">
+            <form action="" method="GET" class="search-form">
                 <i class="fa fa-search search-icon"></i>
                 <input type="text" name="query" id="query" value="" class="search-box" placeholder="Search for product" required>
             </form>
@@ -145,7 +145,11 @@
         </div>
         <!-- end products -->
         <div class="spacer"></div>
-        {{-- <nav>
+    </div>
+</div>
+@endsection
+
+{{-- <nav>
             <ul class="pagination">
                 <li class="page-item disabled" aria-disabled="true" aria-label="&laquo; Previous">
                     <span class="page-link" aria-hidden="true">&lsaquo;</span>
@@ -161,6 +165,3 @@
                 </li>
             </ul>
         </nav> --}}
-    </div>
-</div>
-@endsection
