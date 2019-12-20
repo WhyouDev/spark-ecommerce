@@ -31,7 +31,9 @@
 			<b>Categories</b>
 			<select class="form-control" name="pcat">
             @foreach($categorieslist as $c)
-                <option value="{{ $c->categories_id }}">{{ $c->categories_name }}</option>
+                <option value="{{ $c->categories_id }}" 
+				@if($pe->categories_id == $c->categories_id) selected @endif
+				>{{ $c->categories_name }}</option>
             @endforeach
             </select>
 			</div>
@@ -53,7 +55,7 @@
 			<b>Unit Type (ex: pcs)</b>
 			<input class="form-control" type="text" name="putype" placeholder="Products Price" value="{{ $pe->products_unittype }}">
 			</div>
-			<input type="submit" value="Update" class="btn btn-success">
+			<input type="submit" value="Save" class="btn btn-success">
 	</form>
     @endforeach
 </div>
