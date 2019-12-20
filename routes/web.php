@@ -17,6 +17,9 @@ Route::view('/', 'homepage');
 // login route
 Auth::routes();
 
+// Admin Routes
+Route::group(['middleware' => ['role:admin']], function () {
+
 // dashboard route
 Route::get('/admin', 'HomeController@index')->name('home');
 
@@ -39,6 +42,9 @@ Route::post('/admin/category/storeedit/{id}', 'CategoryController@storeedit');
 Route::delete('/admin/category/delete/{id}','CategoryController@delete');
 
 // transaction route
+});
+
+
 
 //shop route
 Route::get('/pages/shop','ShopController@viewShop');

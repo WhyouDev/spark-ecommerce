@@ -10,6 +10,17 @@ use Session;
 
 class CategoryController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware(['role:admin']);
+    }
+    
     public function categoryjson(){
         $categorylist = CategoriesModel::all();
         return Datatables::of($categorylist)
