@@ -35,3 +35,5 @@ Route::delete('/admin/product/delete/{id}','ProductController@delete');
 
 //shop route
 Route::get('/pages/shop','ShopController@viewShop');
+//detail shop
+Route::get('/pages/detailshop','ShopController@viewShop');
