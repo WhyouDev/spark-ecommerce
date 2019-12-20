@@ -43,6 +43,14 @@
             @endforeach
             </select>
 			</div>
+			<div class="form-group">
+			<b>Tagline</b>
+			<input class="form-control" type="text" name="ptag" placeholder="Products Tagline (Specs or something)">
+			</div>
+			<div class="form-group">
+			<b>Details</b>
+			<textarea class="form-control" name="pdetail" id="" cols="30" rows="3" placeholder="Product Details"></textarea>
+			</div>
             <div class="form-group">
 			<b>Price</b>
 			<input class="form-control" type="number" name="pprice" placeholder="Products Price">

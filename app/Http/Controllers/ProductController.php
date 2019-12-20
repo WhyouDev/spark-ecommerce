@@ -13,6 +13,17 @@ use Session;
 class ProductController extends Controller
 {
 
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware(['role:admin']);
+    }
+
     public function productjson(){
         $productlist = ProductModel::all();
         return Datatables::of($productlist)
@@ -67,6 +78,8 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(), [
             'pname' => 'required',
             'pcat' => 'required',
+            'ptag' => 'required',
+            'pdetail' => 'required',
             'pprice' => 'required',
             'pqty' => 'required',
             'putype' => 'required'
@@ -96,6 +109,8 @@ class ProductController extends Controller
                 ->update([
                    'categories_id' => $request->pcat,
                    'products_name' => $request->pname,
+                   'products_tagline' => $request->ptag,
+                   'products_details' => $request->pdetail,
                    'price' => $request->pprice,
                    'products_photo' => $newfilename,
                    'products_stock' => $request->pqty,
@@ -120,6 +135,8 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(), [
             'pname' => 'required',
             'pcat' => 'required',
+            'ptag' => 'required',
+            'pdetail' => 'required',
             'pprice' => 'required',
             'pfile' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'pqty' => 'required',
@@ -146,6 +163,8 @@ class ProductController extends Controller
         ProductModel::create([
             'categories_id' => $request->pcat,
             'products_name' => $request->pname,
+            'products_tagline' => $request->ptag,
+            'products_details' => $request->pdetail,
             'price' => $request->pprice,
             'products_photo' => $newfilename,
             'products_stock' => $request->pqty,
