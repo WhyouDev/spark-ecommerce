@@ -9,8 +9,4 @@ class DetailController extends Controller
     public function detailShop () {
         return view('pages.detailshop');
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> remotes/origin/master
