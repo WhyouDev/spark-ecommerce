@@ -43,4 +43,4 @@ Route::delete('/admin/category/delete/{id}','CategoryController@delete');
 //shop route
 Route::get('/pages/shop','ShopController@viewShop');
 //detail shop
-Route::get('/pages/detailshop','ShopController@viewShop');
+Route::get('/pages/detailshop','ShopController@detailShop');

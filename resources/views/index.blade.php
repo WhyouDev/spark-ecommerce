@@ -32,7 +32,7 @@
         <div class="container ">
             @yield('content')
         </div>
-        
+        scri
         <footer>
             <div class="footer-content container">
                 
