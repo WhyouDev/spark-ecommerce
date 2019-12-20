@@ -162,7 +162,7 @@ a {
 }
 
 a:visited {
-  color: #212121;
+  color: #464a47;
 }
 
 h1, h2, p {
@@ -181,6 +181,7 @@ h2 {
   margin-bottom: 10px;
 }
 
+
 img {
   max-width: 100%;
 }
@@ -195,13 +196,13 @@ img {
 }
 
 .button {
-  border: 1px solid #212121;
+  border: 1px solid #3099d6;
   padding: 12px 40px;
 }
 
 .button:hover {
   color: #e9e9e9;
-  background: #212121;
+  background: #71daa9;
 }
 
 .button-white {
@@ -237,7 +238,7 @@ header .top-nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 40px 0;
+  padding: 10px 0;
  
 }
 
@@ -277,6 +278,7 @@ header .top-nav ul a:hover {
 
 .hero .hero-image {
   padding-left: 60px;
+  width: 500px;
 }
 
 .hero h1 {
@@ -363,6 +365,7 @@ h1.stylish-heading:after {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 20px;
 }
 
 /* start search Box */

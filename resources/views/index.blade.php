@@ -19,7 +19,7 @@
     <body>
         <header>
             <div class="top-nav container">
-                <div class="logo">PT. Spark Integrated Solution</div>
+                <div class="logo"><a href="/">PT. Spark Integrated Solution</a></div>
                 <ul>
                     <li><a class="list" href="/pages/shop">Shop</a></li>
                     <li><a class="list" href="#">About</a></li>
@@ -32,8 +32,7 @@
         <div class="container ">
             @yield('content')
         </div>
-       
-
+        
         <footer>
             <div class="footer-content container">
                 
