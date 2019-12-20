@@ -27,6 +27,14 @@
 			<b>Name</b>
 			<input class="form-control" type="text" name="pname" placeholder="Products Name" value="{{ $pe->products_name }}">
 			</div>
+			<div class="form-group">
+			<b>Tagline</b>
+			<input class="form-control" type="text" name="ptag" placeholder="Products Tagline" value="{{ $pe->products_tagline }}">
+			</div>
+			<div class="form-group">
+			<b>Details</b>
+			<textarea class="form-control" name="pdetail" cols="30" rows="3">{{ $pe->products_details }}</textarea>
+			</div>
             <div class="form-group">
 			<b>Categories</b>
 			<select class="form-control" name="pcat">
