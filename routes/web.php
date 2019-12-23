@@ -44,7 +44,8 @@ Route::delete('/admin/category/delete/{id}','CategoryController@delete');
 // transaction route
 });
 
-
-
 //shop route
 Route::get('/pages/shop','ShopController@viewShop');
+
+//detail shop
+Route::get('/pages/detailshop','DetailController@detailShop');
