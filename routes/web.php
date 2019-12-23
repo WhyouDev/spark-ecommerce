@@ -46,7 +46,8 @@ Route::get('/admin/user/json','UserController@userjson');
 Route::get('/admin/user', 'UserController@index');
 });
 
-
-
 //shop route
 Route::get('/pages/shop','ShopController@viewShop');
+
+//detail shop
+Route::get('/pages/detailshop','DetailController@detailShop');
