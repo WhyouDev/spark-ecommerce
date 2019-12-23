@@ -45,7 +45,8 @@ class ProductController extends Controller
     public function index()
     {
         // mengambil data produk
-        $productlist = ProductModel::all();
+        $productlist = ProductModel::with('Category')->get();
+        dd($productlist);
     	return view('admin.productlist',['productlist' => $productlist]);
     }
 
@@ -160,6 +161,11 @@ class ProductController extends Controller
         $file->move($tujuan_upload,$newfilename);
         
         // insert data ke table products
+        // $product = new ProductModel();
+        // $product->products_name = $request->pname;
+        // $product->save();
+        // dd($product->id)
+
         ProductModel::create([
             'categories_id' => $request->pcat,
             'products_name' => $request->pname,
