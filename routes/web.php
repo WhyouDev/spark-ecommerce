@@ -41,7 +41,9 @@ Route::get('/admin/category/edit/{id}','CategoryController@edit');
 Route::post('/admin/category/storeedit/{id}', 'CategoryController@storeedit');
 Route::delete('/admin/category/delete/{id}','CategoryController@delete');
 
-// transaction route
+// user management route
+Route::get('/admin/user/json','UserController@userjson');
+Route::get('/admin/user', 'UserController@index');
 });
 
 
