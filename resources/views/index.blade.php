@@ -28,23 +28,15 @@
                 </ul>
             </div> <!-- end top-nav -->
         </header>
-
+    
+        {{-- put your content right here --}}
+        
         <div class="container ">
             @yield('content')
         </div>
-        scri
-        <footer>
-            <div class="footer-content container">
-                
-                <ul>
-                    {{-- <li>Follow Me:</li> --}}
-                    <li><a href="#"><i class="fa fa-globe"></i></a></li>
-                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                    <li><a href="#"><i class="fa fa-github"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                </ul>
-            </div> <!-- end footer-content -->
-        </footer>
-
+    
+         {{-- start footer --}}
+        @include('/partials/footer')
+        <!-- end footer-content -->
     </body>
 </html>
