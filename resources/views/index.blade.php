@@ -24,7 +24,7 @@
                     <li><a class="list" href="/pages/shop">Shop</a></li>
                     <li><a class="list" href="#">About</a></li>
                     <li><a class="list" href="#">Blog</a></li>
-                    <li><a class="list" href="#">Cart</a></li>
+                    <li><a class="list" href="/pages/cart">Cart</a></li>
                 </ul>
             </div> <!-- end top-nav -->
         </header>

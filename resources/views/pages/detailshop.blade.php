@@ -55,7 +55,12 @@
                     <p>&nbsp;</p>
                     {{-- <form action="" method="POST"> --}}
                         <input type="hidden" name="_token" value="DNUEG2fMwGbBiFpBwTnrhlZstVtzRtiPdjzuN2fc">
-                        <button type="submit" class="button button-plain">Add to Cart</button>
+                        
+                        <form action="/cart">
+                            <button type="submit" class="button button-plain">Add to Cart</button>
+                        </form>
+                        
+                    
                     </form>
                 </div>
             </div>

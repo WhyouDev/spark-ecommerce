@@ -49,3 +49,6 @@ Route::get('/pages/shop','ShopController@viewShop');
 
 //detail shop
 Route::get('/pages/detailshop','DetailController@detailShop');
+
+//cart
+Route::get('/cart','CartController@cart');
