@@ -22,29 +22,20 @@
                 <div class="logo"><a href="/">PT. Spark Integrated Solution</a></div>
                 <ul>
                     <li><a class="list" href="/pages/shop">Shop</a></li>
-                    <li><a class="list" href="#">About</a></li>
-                    <li><a class="list" href="#">Blog</a></li>
-                    <li><a class="list" href="#">Cart</a></li>
+                    <li><a class="list" href="/pages/about">About</a></li>
+                    <li><a class="list" href="/pages/cart">Cart</a></li>
                 </ul>
             </div> <!-- end top-nav -->
         </header>
-
+    
+        {{-- put your content right here --}}
+        
         <div class="container ">
             @yield('content')
         </div>
-        
-        <footer>
-            <div class="footer-content container">
-                
-                <ul>
-                    {{-- <li>Follow Me:</li> --}}
-                    <li><a href="#"><i class="fa fa-globe"></i></a></li>
-                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                    <li><a href="#"><i class="fa fa-github"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                </ul>
-            </div> <!-- end footer-content -->
-        </footer>
-
+    
+         {{-- start footer --}}
+        @include('/partials/footer')
+        <!-- end footer-content -->
     </body>
 </html>

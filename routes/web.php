@@ -53,6 +53,9 @@ Route::delete('/admin/user/delete/{id}','UserController@delete');
 
 //shop route
 Route::get('/pages/shop','ShopController@viewShop');
-
 //detail shop
 Route::get('/pages/detailshop','DetailController@detailShop');
+//cart
+Route::get('/pages/cart','CartController@cart');
+//about
+Route::get('/pages/about','AboutController@about');
