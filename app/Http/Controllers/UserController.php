@@ -35,7 +35,7 @@ class UserController extends Controller
     	return view('admin.userlist',['userlist' => $userlist]);
     }
 
-    // method untuk add data user
+    // method untuk menampilkan halaman add data user
     public function add()
     {
         $userlist = User::all();
@@ -71,14 +71,51 @@ class UserController extends Controller
         }
     }
 
+    // method untuk menampilkan halaman edit data user
     public function edit($id){
         $user = User::with('roles')->where('id',$id)->get();
         $roles = Role::all();
-        //dd($user);
-        // $user = User::where('id',$id)->first();
-        // $data['roles']         = $user->roles()->pluck('name');
         return view('admin.useredit',['useredit' => $user,
                                       'roles' => $roles]);
-        //return response()->json($user);
      }
+    
+    // method untuk menyimpan data edit user
+    public function storeedit(Request $request){
+        $validator = Validator::make($request->all(), [
+            'uname' => 'required',
+            'umail' => 'required',
+            'urole' => 'required',
+        ]);
+
+        if(!$validator->fails()) {
+        $password = $request->password;
+        if($password == NULL || $password == '' || empty($password)){
+            $user = User::find($request->id);
+            $user->name             = $request->uname;
+            $user->email            = $request->umail;
+            $user->password         = $request->oldpassword;
+            $user->save();
+            $user->syncRoles($request->urole);
+            return redirect('/admin/user');
+        }else{
+            if($request->password == $request->password_confirmation){
+                $user = User::find($request->id);
+                $user->name             = $request->uname;
+                $user->email            = $request->umail;
+                $user->password         = bcrypt($request->password);
+                $user->save();
+                $user->syncRoles($request->urole);
+                return redirect('/admin/user');
+            }
+            else{
+                return redirect('/admin/user/')
+                        ->withErrors("Password not match!")
+                        ->withInput(); 
+            }
+        }    
+        }
+        return redirect('/admin/user/')
+                        ->withErrors($validator)
+                        ->withInput();
+    }
 }

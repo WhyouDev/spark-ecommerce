@@ -23,17 +23,18 @@
 <table width="100%">
 <tr>
 	<td width="50%"><h2 class="my-1">Edit Users Form</h2></td>
-	<td align="right"><a href="../user/"><button class="btn btn-primary"><i class="fa fa-reply"></i>  Back to Users</button></a></td>
+	<td align="right"><a href="{{ url()->previous() }}"><button class="btn btn-primary"><i class="fa fa-reply"></i>  Back to Users</button></a></td>
 </tr>
 </table>
 <hr>
 </table>
 	<div class="col-lg-8">	
     @foreach($useredit as $ue)
-		<form action="/admin/user/storeedit" method="POST">
+		<form action="/admin/user/storeedit/{{ $ue->id }}" method="POST">
 			{{ csrf_field() }}
             <div class="form-group">
 			<b>Name</b>
+			<input class="form-control" type="hidden" name="id" placeholder="User Name" value="{{ $ue->id }}">
 			<input class="form-control" type="text" name="uname" placeholder="User Name" value="{{ $ue->name }}">
 			</div>
             <div class="form-group">
@@ -53,7 +54,7 @@
 			<b>Roles</b>
 			<select name="urole" class="form-control">
             @foreach ($roles as $role)
-            <option value="{{ $role->name }}">{{ $role->name }}</option>
+            <option value="{{ $role->id }}"  {{ $ue->roles->contains($role->id) ? 'selected' : '' }}>{{ $role->name }}</option>
             @endforeach
             </select>
 			</div>
