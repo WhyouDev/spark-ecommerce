@@ -626,7 +626,7 @@ footer .footer-content ul a {
 }
 
 .btn-link{
-  color: blue;
+  color: cyan;
   padding: 15px;
 }
 /* auth pages */
@@ -694,4 +694,12 @@ footer .footer-content ul a {
 .login-auth{
   background-image: url("/img/login2.jpg");
   background-size: cover;
+}
+
+.control-label{
+  color: white;
+}
+
+.checkbox {
+  color: white;
 }
