@@ -53,7 +53,13 @@
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="fas fa-cash-register nav-icon"></i>
-                  <p>Data Transaksi</p>
+                  <p>Transaction Data</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fas fa-book nav-icon"></i>
+                  <p>Management Stock</p>
                 </a>
               </li>
 
