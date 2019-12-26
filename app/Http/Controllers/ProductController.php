@@ -24,9 +24,9 @@ class ProductController extends Controller
         $this->middleware(['role:admin']);
     }
 
+    // method untuk membuat json data produk
     public function productjson(){
         $productlist = ProductModel::with('Category')->get();
-        //  dd($productlist);
         return Datatables::of($productlist)
          ->addColumn('action', function ($productlist) {
                 $btn = '
@@ -43,96 +43,23 @@ class ProductController extends Controller
         ->make(true);
     }
 
+    // method untuk menampilkan data produk
     public function index()
     {
-        // mengambil data produk
         $productlist = ProductModel::with('Category')->get();
     	return view('admin.productlist',['productlist' => $productlist]);
     }
 
-    // method untuk menampilkan add data produk
+    // method untuk menampilkan halaman tambah data produk
     public function add()
     {
         $categorieslist = CategoriesModel::all();
         return view('admin.productadd',['categorieslist' => $categorieslist]);
     }
 
-    // method untuk menampilkan edit data produk
-    public function edit($id)
-    {
-        // mengambil data dari model kategori 
-        $categorieslist = CategoriesModel::all();
-        // mengambil data produk berdasarkan id yang dipilih
-        $productEdit = ProductModel::where('products_id',$id)->get();
-        // passing data produk yang didapat ke view productsedit.blade.php
-        return view('admin.editproduct',[
-                                            'productEdit' => $productEdit,
-                                            'categorieslist' => $categorieslist,
-                                        ]);
-    
-    }
-
-    // method untuk proses edit data produk
-    public function storeedit(Request $request, $id)
-    {
-        // validasi form
-        $validator = Validator::make($request->all(), [
-            'pname' => 'required',
-            'pcat' => 'required',
-            'ptag' => 'required',
-            'pdetail' => 'required',
-            'pprice' => 'required',
-            'pqty' => 'required',
-            'putype' => 'required'
-        ]);
-        
-        if(!$validator->fails()) {
-            if(!empty($request->pfile)){
-            // menyimpan data file yang diupload ke variabel $file
-            $file = $request->file('pfile');
-            // menyimpan nama file kedalam variable namafoto
-            $namaphoto = $file->getClientOriginalName();
-            // pisahin extension dengan nama file
-            $tmp = explode('.', $namaphoto);
-            $file_extension = end($tmp);
-            // buat nama file acak + extension
-            $newfilename = uniqid().'.'.$file_extension;
-            // file dir
-            $tujuan_upload = 'img_products/';
-            // proses upload
-            $file->move($tujuan_upload,$newfilename);
-            }else{
-            // kalo kosong pake file lama
-            $newfilename = $request->oldpfile;
-            }
-                // proses update
-                $categories = ProductModel::where('products_id',$id)
-                ->update([
-                   'categories_id' => $request->pcat,
-                   'products_name' => $request->pname,
-                   'products_tagline' => $request->ptag,
-                   'products_details' => $request->pdetail,
-                   'price' => $request->pprice,
-                   'products_photo' => $newfilename,
-                   'products_stock' => $request->pqty,
-                   'products_unittype' => $request->putype
-                 ]);
-
-            // jika berhasil direct ke halaman product
-            return redirect('/admin/product');
-            }
-    
-            return redirect('/admin/product/edit/{{ $products_edit }}')
-                            ->withErrors($validator)
-                            ->withInput();
-
-    }
-
-
-    // method untuk proses add data 
+    // method untuk menyimpan data dari tambah produk
     public function store(Request $request)
     {
-        // validasi form
         $validator = Validator::make($request->all(), [
             'pname' => 'required',
             'pcat' => 'required',
@@ -176,16 +103,74 @@ class ProductController extends Controller
             'products_stock' => $request->pqty,
             'products_unittype' => $request->putype
         ]);
-
-        // jika berhasil direct ke halaman product
         return redirect('/admin/product');
         }
-
         return redirect('/admin/product/add')
                         ->withErrors($validator)
                         ->withInput();
     }
 
+    // method untuk menampilkan halaman edit data produk
+    public function edit($id)
+    {
+        $categorieslist = CategoriesModel::all();
+        $productEdit = ProductModel::where('products_id',$id)->get();
+        return view('admin.editproduct',[
+                                            'productEdit' => $productEdit,
+                                            'categorieslist' => $categorieslist,
+                                        ]);
+    }
+
+    // method untuk menyimpan data dari edit data produk
+    public function storeedit(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(), [
+            'pname' => 'required',
+            'pcat' => 'required',
+            'ptag' => 'required',
+            'pdetail' => 'required',
+            'pprice' => 'required',
+            'pqty' => 'required',
+            'putype' => 'required'
+        ]);
+        
+        if(!$validator->fails()) {
+            if(!empty($request->pfile)){
+            // menyimpan data file yang diupload ke variabel $file
+            $file = $request->file('pfile');
+            // menyimpan nama file kedalam variable namafoto
+            $namaphoto = $file->getClientOriginalName();
+            // pisahin extension dengan nama file
+            $tmp = explode('.', $namaphoto);
+            $file_extension = end($tmp);
+            // buat nama file acak + extension
+            $newfilename = uniqid().'.'.$file_extension;
+            // file dir
+            $tujuan_upload = 'img_products/';
+            // proses upload
+            $file->move($tujuan_upload,$newfilename);
+            }else{
+            // kalo kosong pake file lama
+            $newfilename = $request->oldpfile;
+            }
+            
+            $categories = ProductModel::where('products_id',$id)
+                ->update([
+                   'categories_id' => $request->pcat,
+                   'products_name' => $request->pname,
+                   'products_tagline' => $request->ptag,
+                   'products_details' => $request->pdetail,
+                   'price' => $request->pprice,
+                   'products_photo' => $newfilename,
+                   'products_stock' => $request->pqty,
+                   'products_unittype' => $request->putype
+                 ]);
+            return redirect('/admin/product');
+            }
+            return redirect('/admin/product/edit/{{ $products_edit }}')
+                            ->withErrors($validator)
+                            ->withInput();
+    }
 
     public function delete($id)
     {

@@ -44,6 +44,11 @@ Route::delete('/admin/category/delete/{id}','CategoryController@delete');
 // user management route
 Route::get('/admin/user/json','UserController@userjson');
 Route::get('/admin/user', 'UserController@index');
+Route::get('/admin/user/add', 'UserController@add');
+Route::post('/admin/user/store', 'UserController@store');
+Route::get('/admin/user/edit/{id}','UserController@edit');
+Route::post('/admin/user/storeedit/{id}', 'UserController@storeedit');
+Route::delete('/admin/user/delete/{id}','UserController@delete');
 });
 
 //shop route
