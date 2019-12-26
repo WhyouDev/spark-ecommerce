@@ -63,7 +63,7 @@ class UserController extends Controller
             $user->password         = bcrypt($request->password);
             $user->save();
             $user->assignRole($request->urole);   
-            return redirect('/admin/user');
+            return redirect('/admin/user')->with(['success' => 'Add data successfully!']);
         }else{
             return redirect('/admin/user/add')
                         ->withErrors($validate)
@@ -96,7 +96,7 @@ class UserController extends Controller
             $user->password         = $request->oldpassword;
             $user->save();
             $user->syncRoles($request->urole);
-            return redirect('/admin/user');
+            return redirect('/admin/user')->with(['success' => 'Update data successfully!']);
         }else{
             if($request->password == $request->password_confirmation){
                 $user = User::find($request->id);
@@ -105,7 +105,7 @@ class UserController extends Controller
                 $user->password         = bcrypt($request->password);
                 $user->save();
                 $user->syncRoles($request->urole);
-                return redirect('/admin/user');
+                return redirect('/admin/user')->with(['success' => 'Update data successfully!']);
             }
             else{
                 return redirect('/admin/user/')
@@ -117,5 +117,11 @@ class UserController extends Controller
         return redirect('/admin/user/')
                         ->withErrors($validator)
                         ->withInput();
+    }
+
+    public function delete($id)
+    {
+        $user = User::where('id',$id);
+        $user->delete();
     }
 }

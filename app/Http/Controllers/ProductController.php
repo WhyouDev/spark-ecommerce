@@ -103,7 +103,7 @@ class ProductController extends Controller
             'products_stock' => $request->pqty,
             'products_unittype' => $request->putype
         ]);
-        return redirect('/admin/product');
+        return redirect('/admin/product')->with(['success' => 'Add data successfully!']);
         }
         return redirect('/admin/product/add')
                         ->withErrors($validator)
@@ -165,7 +165,7 @@ class ProductController extends Controller
                    'products_stock' => $request->pqty,
                    'products_unittype' => $request->putype
                  ]);
-            return redirect('/admin/product');
+            return redirect('/admin/product')->with(['success' => 'Update data successfully!']);
             }
             return redirect('/admin/product/edit/{{ $products_edit }}')
                             ->withErrors($validator)
