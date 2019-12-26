@@ -9,7 +9,7 @@
                         <i class="fa fa-chevron-right breadcrumb-separator"></i>
                         <span><a href="/pages/shop"> Shop</a></span>
                         <i class="fa fa-chevron-right breadcrumb-separator"></i>
-                        <span>Desktop 1</span>
+                        <span>Desktop Ultra</span>
                     </div>
                     <div>
                         <form action="/search" method="GET" class="search-form">
@@ -44,7 +44,7 @@
                     
                 </div>
                 <div class="product-section-information">
-                    <h1 class="product-section-title">Desktop 1</h1>
+                    <h1 class="product-section-title">Desktop Ultra</h1>
                     <div class="product-section-subtitle">25 inch, 3 TB SSD, 32GB RAM</div>
                     <div>
                         <div class="badge badge-success">In Stock</div>

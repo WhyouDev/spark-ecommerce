@@ -65,7 +65,7 @@
                     <img src="/img/desktop-1.jpg" alt="product">
                 </a>
                 <a href="#">
-                    <div class="product-name">Laptop 1</div>
+                    <div class="product-name">Desktop Ultra</div>
                 </a>
                 <div class="product-price">$2245.13</div>
             </div>
