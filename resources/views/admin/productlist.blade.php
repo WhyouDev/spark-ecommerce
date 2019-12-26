@@ -22,6 +22,7 @@
 				<th>No</th>
                 <th>Name</th>
                 <th>Price</th>
+                <th>Category</th>
                 <th>Stock</th>
                 <th>Unit</th>
 				<th>Action</th>
@@ -45,6 +46,9 @@ $(function() {
 			{ data: 'DT_RowIndex', name:'DT_RowIndex'},
             { data: 'products_name', name: 'products_name' },
             { data: 'price', name: 'products_price' },
+            { data: 'category', render(data) { 
+              return data.categories_name
+            }},
             { data: 'products_stock', name:'products_stock'},
             { data: 'products_unittype', name:'products_unittype'},
 			{ data: 'action', name: 'action', orderable: false, searchable: false }

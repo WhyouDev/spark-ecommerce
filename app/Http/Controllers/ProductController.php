@@ -25,7 +25,8 @@ class ProductController extends Controller
     }
 
     public function productjson(){
-        $productlist = ProductModel::all();
+        $productlist = ProductModel::with('Category')->get();
+        //  dd($productlist);
         return Datatables::of($productlist)
          ->addColumn('action', function ($productlist) {
                 $btn = '
@@ -46,7 +47,6 @@ class ProductController extends Controller
     {
         // mengambil data produk
         $productlist = ProductModel::with('Category')->get();
-        dd($productlist);
     	return view('admin.productlist',['productlist' => $productlist]);
     }
 
