@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\OrderModel;
+use App\Models\OrderDetailModel;
 use DataTables;
 use Illuminate\Support\Facades\Validator;
 use Session;
@@ -39,5 +40,11 @@ class OrderController extends Controller
     {
         $orderlist = OrderModel::with('User')->get();
     	return view('admin.orderlist',['orderlist' => $orderlist]);
+    }
+
+    public function detail($id)
+    {
+        $orderdetail = OrderDetailModel::with('Order')->get();
+    	return view('admin.orderdetail',['orderdetail' => $orderdetail]);
     }
 }
