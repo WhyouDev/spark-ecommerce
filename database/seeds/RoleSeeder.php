@@ -2,8 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
-use \Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class RoleSeeder extends Seeder
 {
@@ -14,10 +14,18 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        $role                       = new Role;
-        $role->name                 = "admin";
-        $role->slug                 = Str::slug("admin","-");
-        $role->description          = "buat bikin admin";
-        $role->save();
+        // Reset cached roles and permissions
+        app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
+
+        // create permissions
+        Permission::create(['name' => 'edit role']);
+        Permission::create(['name' => 'delete role']);
+        Permission::create(['name' => 'create role']);
+
+        // create roles and assign created permissions
+
+        // this can be done as separate statements
+        $role = Role::create(['name' => 'admin']);
+        $role->givePermissionTo(Permission::all());
     }
 }
