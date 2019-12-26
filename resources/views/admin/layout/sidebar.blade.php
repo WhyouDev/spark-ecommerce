@@ -51,7 +51,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/admin/order" class="nav-link {{ (request()->is('admin/order')) ? 'active' : '' }}">
                   <i class="fas fa-cash-register nav-icon"></i>
                   <p>Transaction Data</p>
                 </a>
