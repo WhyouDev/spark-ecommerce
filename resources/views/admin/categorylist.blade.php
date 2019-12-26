@@ -11,8 +11,11 @@
 @section('content')
 <div class="card">
 <div class="card-header border-0">
-@if(session()->has('status'))
-  {{ session('status') }}
+@if ($message = Session::get('success'))
+      <div class="alert alert-success alert-block">
+        <button type="button" class="close" data-dismiss="alert">×</button> 
+          <strong>{{ $message }}</strong>
+      </div>
 @endif
 <a href="category/add"><button class="btn btn-primary"><i class="fa fa-plus"></i>&nbspAdd Categories</button></a>
 <hr>

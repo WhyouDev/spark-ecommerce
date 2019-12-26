@@ -61,7 +61,7 @@ class CategoryController extends Controller
         CategoriesModel::create([
             'categories_name' => $request->cname
         ]);
-        return redirect('/admin/category');
+        return redirect('/admin/category')->with(['success' => 'Add data successfully!']);
         }
         return redirect('/admin/category/add')
                         ->withErrors($validator)
@@ -87,7 +87,7 @@ class CategoryController extends Controller
                 ->update([
                    'categories_name' => $request->cname
                  ]);
-            return redirect('/admin/category');
+            return redirect('/admin/category')->with(['success' => 'Update data successfully!']);
             }
             return redirect('/admin/category/edit/{{ $categories_id }}')
                             ->withErrors($validator)
