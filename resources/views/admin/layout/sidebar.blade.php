@@ -63,7 +63,7 @@
                 </a>
               </li>
 
-            <li class="nav-item has-treeview {{ (request()->is('admin/product')) ? 'active' : '' }}">
+            <li class="nav-item has-treeview {{ (request()->is('admin/product')) ? 'active' : '' }} menu-open">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
@@ -85,7 +85,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/user" class="nav-link">
+                <a href="/admin/user" class="nav-link {{ (request()->is('admin/user')) ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Master Users</p>
                 </a>
