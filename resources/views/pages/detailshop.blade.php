@@ -56,7 +56,7 @@
                     {{-- <form action="" method="POST"> --}}
                         <input type="hidden" name="_token" value="DNUEG2fMwGbBiFpBwTnrhlZstVtzRtiPdjzuN2fc">
                         
-                        <form action="/cart">
+                        <form action="/pages/cart">
                             <button type="submit" class="button button-plain">Add to Cart</button>
                         </form>
                         

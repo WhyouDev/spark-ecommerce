@@ -156,7 +156,7 @@ body {
   line-height: 1.6;
 }
 
-a {
+a, strong {
   text-decoration: none;
   color: #000000;
 }
@@ -256,7 +256,7 @@ header .top-nav ul {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 40%;
+  width: 25%;
 }
 
 header .top-nav ul a {

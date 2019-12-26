@@ -22,8 +22,7 @@
                 <div class="logo"><a href="/">PT. Spark Integrated Solution</a></div>
                 <ul>
                     <li><a class="list" href="/pages/shop">Shop</a></li>
-                    <li><a class="list" href="#">About</a></li>
-                    <li><a class="list" href="#">Blog</a></li>
+                    <li><a class="list" href="/pages/about">About</a></li>
                     <li><a class="list" href="/pages/cart">Cart</a></li>
                 </ul>
             </div> <!-- end top-nav -->
