@@ -14,7 +14,7 @@ class UserController extends Controller
 
     public function userjson(){
         $roles = User::with('roles')->get();
-        //dd($roles);
+        //  dd($roles);
         return Datatables::of($roles)
          ->addColumn('action', function ($roles) {
                 $btn = '
