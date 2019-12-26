@@ -14,7 +14,7 @@
 <table width="100%">
 <tr>
 	<td width="50%"><h2 class="my-1">Edit Products Form</h2></td>
-	<td align="right"><a href="../"><button class="btn btn-primary"><i class="fa fa-reply"></i>  Back to Products</button></a></td>
+	<td align="right"><a href="{{ url()->previous() }}"><button class="btn btn-primary"><i class="fa fa-reply"></i>  Back to Products</button></a></td>
 </tr>
 </table>
 <hr>
