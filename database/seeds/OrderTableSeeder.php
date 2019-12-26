@@ -16,6 +16,7 @@ class OrderTableSeeder extends Seeder
         $order = new OrderModel();
         $order->orders_id       = "1";
         $order->users_id        = "1";
+        $order->no_invoice      = "261219001";
         $order->qty_total       = "2";
         $order->price_total     = "50000";
         $order->save();
