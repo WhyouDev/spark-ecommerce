@@ -13,3 +13,4 @@ class ProductModel extends Model
         return $this->hasOne('App\Models\CategoriesModel','categories_id','categories_id');
     }
 }
+

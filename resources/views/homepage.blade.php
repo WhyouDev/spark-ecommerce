@@ -7,10 +7,12 @@
 <div class="hero container">
     <div class="hero-copy">
         <h1>Ecommerce</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto, ullam!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate nihil commodi incidunt eum vel, 
+            libero dolores facere, aliquam, ratione esse saepe. 
+            Placeat illum temporibus magni corporis quis quas facere? Adipisci.</p>
         <div class="hero-buttons">
-            <a href="#" class="button button-black">Button 1</a>
-            <a href="#" class="button button-black">Button 2</a>
+            <a href="#" class="button button-black">GitHub</a>
+            {{-- <a href="#" class="button button-black"></a> --}}
         </div>
     </div> <!-- end hero-copy -->
 
