@@ -9,6 +9,6 @@ class ShopController extends Controller
 {
     public function viewShop () {
         $categorieslist = CategoriesModel::all();
-        return view('pages.shop', ['categorieslist' => $categorieslist]);
+        return view('pages.shop');
     }
 }
