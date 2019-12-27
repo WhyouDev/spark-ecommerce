@@ -20,7 +20,7 @@
 <hr>
 <table width="100%">
 <tr>
-<td width="13%">Customer Name</td>
+<td width="15%">Customer Name</td>
 <td width="1%"> : </td>
 <td width="50%"> {{ $orderdetail[0]['order']['user']['name'] }}</td>
 <td>Order Date</td>
@@ -41,7 +41,7 @@
 <td>{{ $orderdetail[0]['order']['no_invoice'] }}</td>
 <td>Payment Status</td>
 <td> : </td>
-<td> <font color="red">Not Yet Paid</font></td>
+<td> <font color="red">Not Paid</font></td>
 </tr>
 </table>
 <br />

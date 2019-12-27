@@ -59,4 +59,12 @@ class OrderController extends Controller
         //dd($orderdetail);
     	return view('admin.orderdetail',['orderdetail' => $orderdetail]);
     }
+
+    public function delete($id)
+    {
+        $delo = OrderModel::where('orders_id',$id);
+        $delo->delete();
+        $delod = OrderDetailModel::where('orders_id',$id);
+        $delod->delete();
+    }
 }
