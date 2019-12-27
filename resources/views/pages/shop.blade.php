@@ -22,7 +22,9 @@
     <div class="sidebar">
         <h3>By Category</h3>
         <ul>
-            <li class="">
+            {{-- For catagory list --}}
+
+            {{-- <li class="">
                 <a href="">Laptops</a>
             </li>
             <li class="">
@@ -42,7 +44,7 @@
             </li>
             <li class="">
                 <a href="">Appliances</a>
-            </li>
+            </li> --}}
         </ul>
     </div>
     <!-- end sidebar -->
@@ -69,7 +71,7 @@
                 </a>
                 <div class="product-price">$2245.13</div>
             </div>
-            <div class="product">
+            {{-- <div class="product">
                 <a href="#">
                     <img src="/img/macbook-pro.png" alt="product">
                 </a>
@@ -140,7 +142,7 @@
                     <div class="product-name">Laptop 12</div>
                 </a>
                 <div class="product-price">$2059.86</div>
-            </div>
+            </div> --}}
             
         </div>
         <!-- end products -->

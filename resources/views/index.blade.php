@@ -14,6 +14,7 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('frontend/style/css/frontmain.css') }}">
         <link rel="stylesheet" href="{{ asset('frontend/style/css/frontrespons.css') }}">
+        <link rel='icon' href="{{ asset('site/favicon.ico') }}" type='image/x-icon'/>
 
     </head>
     <body>
