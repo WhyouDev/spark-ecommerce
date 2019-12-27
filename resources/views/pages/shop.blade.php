@@ -35,9 +35,6 @@
                 <a href="">Tablets</a>
             </li>
             <li class="">
-                <a href=""></a>
-            </li>
-            <li class="">
                 <a href="">Digital Cameras</a>
             </li>
             <li class="">
