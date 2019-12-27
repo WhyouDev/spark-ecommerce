@@ -41,7 +41,6 @@ class CategoryController extends Controller
     {
         $categorieslist = CategoriesModel::all();
         return view('admin.categorylist',['categorieslist' => $categorieslist]);
-        return view( 'pages.shop', ['categorieslist' => $categorieslist]);
     }
 
      // method untuk menampilkan halaman tambah kategori
