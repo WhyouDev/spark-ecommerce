@@ -40,7 +40,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categorieslist = CategoriesModel::all();
-    	return view('admin.categorylist',['categorieslist' => $categorieslist]);
+        return view('admin.categorylist',['categorieslist' => $categorieslist]);
     }
 
      // method untuk menampilkan halaman tambah kategori

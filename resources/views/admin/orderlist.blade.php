@@ -55,7 +55,7 @@ $(function() {
     })
 
 
-    $(document).on('click','.deleteProduct',function() {
+    $(document).on('click','.deleteOrder',function() {
         var id=$(this).data('id')
                 
         Swal.fire({
@@ -70,12 +70,12 @@ $(function() {
               if (result.value) {
                 $.ajax({
                 type: "delete",
-                url: "/admin/product/delete/" + id,
+                url: "/admin/order/delete/" + id,
                 headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 success: function(data){
-                    producttable.ajax.reload();
+                    ordetable.ajax.reload();
                 }
                 });
             }
