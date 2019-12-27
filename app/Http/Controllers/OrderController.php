@@ -35,6 +35,17 @@ class OrderController extends Controller
         ->make(true);
     }
 
+    // method untuk membuat json data produk
+    public function orderdetailjson($id){
+        $detailorder = OrderDetailModel::with('Order','Product')->get();       
+        return Datatables::of($detailorder)
+        ->addColumn('products_name', function ($detailorder) {
+            return $detailorder->product->products_name;
+        })
+        ->addIndexColumn()
+        ->make(true);
+    }
+
     // method untuk menampilkan data produk
     public function index()
     {
@@ -44,7 +55,16 @@ class OrderController extends Controller
 
     public function detail($id)
     {
-        $orderdetail = OrderDetailModel::with('Order')->get();
+        $orderdetail = OrderDetailModel::with('Order')->where('orders_id', $id)->get();
+        //dd($orderdetail);
     	return view('admin.orderdetail',['orderdetail' => $orderdetail]);
+    }
+
+    public function delete($id)
+    {
+        $delo = OrderModel::where('orders_id',$id);
+        $delo->delete();
+        $delod = OrderDetailModel::where('orders_id',$id);
+        $delod->delete();
     }
 }

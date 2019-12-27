@@ -22,12 +22,19 @@
     <div class="sidebar">
         <h3>By Category</h3>
         <ul>
+<<<<<<< HEAD
             {{-- For catagory list --}}
 
             {{-- <li class="">
                 <a href="">Laptops</a>
-            </li>
+=======
+            @foreach($categorieslist as $category)
             <li class="">
+                <a href="">{{ $category->categories_name }}</a>
+>>>>>>> 169b6d84bc19478d79fc24154d6e905d3124fee4
+            </li>
+            @endforeach
+            <!-- <li class="">
                 <a href="">Desktops</a>
             </li>
             <li class="">
@@ -44,7 +51,11 @@
             </li>
             <li class="">
                 <a href="">Appliances</a>
+<<<<<<< HEAD
             </li> --}}
+=======
+            </li> -->
+>>>>>>> 169b6d84bc19478d79fc24154d6e905d3124fee4
         </ul>
     </div>
     <!-- end sidebar -->

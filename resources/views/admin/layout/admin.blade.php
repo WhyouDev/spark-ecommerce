@@ -23,6 +23,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{ asset('backend/lte/plugins/sweetalert2/sweetalert2.min.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="{{ asset('backend/css/ionicons.min.css') }}">
   <meta name="csrf-token" content="{{ csrf_token() }}" />
   <link rel='icon' href="{{ asset('site/favicon.ico') }}" type='image/x-icon'/>
 </head>
