@@ -11,7 +11,6 @@
 @section('content')
 <div class="card">
 <div class="card-header border-0">
-@foreach($orderdetail as $od)
 <table width="100%">
 <tr>
 <td width="50%"><h3>Order Details</h3></td>
@@ -23,13 +22,13 @@
 <tr>
 <td width="13%">Customer Name</td>
 <td width="1%"> : </td>
-<td width="50%"> {{ $od->order->user->name }}</td>
+<td width="50%"> {{ $orderdetail[0]['order']['user']['name'] }}</td>
 <td>Order Date</td>
 <td> : </td>
-<td>{{ $od->order->created_at }}</td>
+<td>{{ $orderdetail[0]['order']['created_at'] }}</td>
 </tr>
 <tr>
-<td>Customer Adress</td>
+<td>Customer Address</td>
 <td> : </td>
 <td> Jl. Lorem Ipsum </td>
 <td>Courir Service</td>
@@ -39,7 +38,7 @@
 <tr>
 <td>Invoice Number</td>
 <td> : </td>
-<td>{{ $od->order->no_invoice }}</td>
+<td>{{ $orderdetail[0]['order']['no_invoice'] }}</td>
 <td>Payment Status</td>
 <td> : </td>
 <td> <font color="red">Not Yet Paid</font></td>
@@ -48,7 +47,7 @@
 <br />
 <h4>Invoice Print</h4>
 <hr>
-<table class="table table-bordered" id="order-table">
+<table class="table table-bordered" id="order-table" data-id="{{ $orderdetail[0]['order']['orders_id'] }}">
         <thead>
             <tr>
 				<th>No</th>
@@ -60,13 +59,31 @@
     </table>
 <table width="100%">
 <tr>
-<td width="85%"></td> 
-<td width="15%"><h4>Total : {{ $od->order->price_total }}</h4></td>
+<hr>
+<td width="80%"></td> 
+<td width="20%"><h4>Total : {{ $orderdetail[0]['order']['price_total'] }}</h4></td>
 </tr>
 </table>
 </div>
 </div>
-@endforeach
-</div>
-</div>
 @stop
+
+@push('scripts')
+<script>
+$(function() {
+    var id=$(this).data('id')
+    var ordetable = $('#order-table').DataTable({
+		bFilter: false,
+        processing: true,
+        serverSide: true,
+        ajax: '/admin/orderdetail/json/' + id,
+        columns: [
+			{ data: 'DT_RowIndex', name:'DT_RowIndex'},
+            { data: 'products_name', name: 'products_name' },
+            { data: 'sub_qty' , name : 'sub_qty'},
+            { data: 'price_subtotal', name:'price_subtotal'},
+        ]
+    })
+})
+</script>
+@endpush

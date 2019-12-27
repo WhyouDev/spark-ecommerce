@@ -52,6 +52,7 @@ Route::delete('/admin/user/delete/{id}','UserController@delete');
 
 // transaction (Order) route
 Route::get('/admin/order/json','OrderController@orderjson');
+Route::get('/admin/orderdetail/json/{id}','OrderController@orderdetailjson');
 Route::get('/admin/order', 'OrderController@index');
 Route::get('/admin/order/detail/{id}','OrderController@detail');
 Route::delete('/admin/order/delete/{id}','OrderController@delete');
