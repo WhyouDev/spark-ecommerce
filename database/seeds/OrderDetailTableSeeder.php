@@ -17,7 +17,7 @@ class OrderDetailTableSeeder extends Seeder
         $orderdetail->orders_id       = "1";
         $orderdetail->products_id     = "1";
         $orderdetail->sub_qty         = "2";
-        $orderdetail->price_subtotal  = "25000";
+        $orderdetail->price_subtotal  = "50000";
         $orderdetail->save();
     }
 }

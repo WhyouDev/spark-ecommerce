@@ -28,7 +28,7 @@
 <td>{{ $orderdetail[0]['order']['created_at'] }}</td>
 </tr>
 <tr>
-<td>Customer Adress</td>
+<td>Customer Address</td>
 <td> : </td>
 <td> Jl. Lorem Ipsum </td>
 <td>Courir Service</td>
@@ -59,8 +59,9 @@
     </table>
 <table width="100%">
 <tr>
-<td width="85%"></td> 
-<td width="15%"><h4>Total : {{ $orderdetail[0]['order']['price_total'] }}</h4></td>
+<hr>
+<td width="80%"></td> 
+<td width="20%"><h4>Total : {{ $orderdetail[0]['order']['price_total'] }}</h4></td>
 </tr>
 </table>
 </div>
